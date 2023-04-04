@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{lazy,Suspense} from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import User from './Routes/User';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const Admin =lazy(()=>import('./Routes/Admin'))
+
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path='/*' element={<User />} />
+        </Routes>
+        <Suspense fallback={<h1 className="al">loding.....</h1>}>
+        <Routes> 
+          <Route path='/admin/*' element={<Admin />} />
+        </Routes>
+        </Suspense>
+      </Router>
     </div>
   );
 }
 
 export default App;
+
+

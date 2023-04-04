@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0
+}
+
+.card {
+  width: 350px;
+  background-color:#7b94ad;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.image img {
+  transition: all 0.5s
+}
+
+.card:hover .image .imgprofileIMage {
+  transform: scale(1.5)
+}
+
+.name {
+  font-size: 22px;
+  font-weight: bold
+}
+
+.idd {
+  font-size: 14px;
+  font-weight: 600
+}
+
+.idd1 {
+  font-size: 12px
+}
+
+.number {
+  font-size: 22px;
+  font-weight: bold
+}
+
+.follow {
+  font-size: 12px;
+  font-weight: 500;
+  color: #444444
+}
+
+.btn1 {
+  height: 40px;
+  width: 150px;
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 15px;
+  border-radius: 20%
+
+}
+
+.text span {
+  font-size: 13px;
+  color: #545454;
+  font-weight: 500
+}
+
+.icons i {
+  font-size: 19px
+}
+
+hr .new1 {
+  border: 1px solid
+}
+
+.join {
+  font-size: 14px;
+  color: #a0a0a0;
+  font-weight: bold
+}
+
+.date {
+  background-color: #ccc
+}
+
+.profileIMage {
+  border-radius: 50px;
+  width: 150px;
+}
+.bgimg{
+  background-image: url(../../../../public/bg.avif);
+  background-size: cover  ;
+}
+
+				                
+.avatar{
+  width:200px;
+  height:200px;
+  }				              
+.custombutton{
+      background-color:#344D67;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin-top: 10px;
+  }
+.custombutton:hover{
+      background-color:#5f6973;
+  }
