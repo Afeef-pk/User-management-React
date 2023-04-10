@@ -10,13 +10,13 @@ import Signup from '../page/User/SingnupPage'
 
 function User() {
 
-    const [cookies, setCookie] = useCookies(['jwt']);
+    const [cookies] = useCookies(['jwt']);
     const dispatch = useDispatch()
     useEffect(() => {
         if (Object.keys(cookies).length > 0) {
             dispatch(UserActions.userAddDetails({ name: cookies.jwt.name, token: cookies.jwt.token }))
         }
-    }, [])
+    }, [cookies,dispatch])
     
     let User = useSelector(state => { return state?.user?.userToken })
 
@@ -35,7 +35,7 @@ function User() {
             </Routes>
 
             <Routes>
-                <Route path="/myAccount" element={<Myaccount />} />
+                <Route path="/myAccount" element={User ? <Myaccount /> : <Login/>} />
             </Routes>
         </div>
     )

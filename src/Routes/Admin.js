@@ -8,20 +8,18 @@ import AdminHome from '../page/Admin/AdminHome'
 import AdminEdite from '../page/Admin/AdminEdite'
 function Admin() {
 
-  const [cookies, setCookie] = useCookies(['jwt']);
+  const [cookies] = useCookies(['jwt']);
+  const dispatch = useDispatch()
+  
+  useEffect(() => {
+    if (Object.keys(cookies).length > 0) {
+      dispatch(AdminActions.AddAdmin({token: cookies?.jwt?.Admintoken}))
+    }
+  },[])
+  
   let Admin = useSelector(state => { return state.Admin.AdminToken })
-    const dispatch = useDispatch()
-
-
-    useEffect(() => {
-      if (Object.keys(cookies).length > 0) {
-        console.log(cookies.jwt.Admintoken);
-        dispatch(AdminActions.AddAdmin({token: cookies?.jwt?.Admintoken}))
-      }
-    }, [])
-    
-
-  return (
+  
+  return ( 
     <div>
       <Routes>
         <Route path="/" element={Admin? <AdminHome/> :<AdminLoginPage/>} />

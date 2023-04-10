@@ -1,21 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const AdminAthu=createSlice({
+const AdminAuth=createSlice({
     name: "Admin",
     initialState: {
         AdminToken: null
     },
     reducers:{
         AddAdmin(state,actions){
-            const newitem =actions.payload;
-            state.AdminToken=newitem.token
+            const admin =actions.payload;
+            state.AdminToken=admin.token
         },
         AdminLogout(state,actions){
-            state.AdminToken=""
+            state.AdminToken=''
         }
     }
 })
 
 
-export const AdminActions=AdminAthu.actions
-export default AdminAthu
+export const AdminActions=AdminAuth.actions
+export default AdminAuth
